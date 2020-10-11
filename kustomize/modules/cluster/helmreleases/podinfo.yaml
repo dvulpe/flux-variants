@@ -12,3 +12,5 @@ spec:
     version: 5.0.2
   values:
     replicaCount: 3
+    ingress:
+      enabled: true
