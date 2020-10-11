@@ -6,9 +6,6 @@ metadata:
 spec:
   releaseName: metrics-server
   targetNamespace: kube-system
-  timeout: 300
-  resetValues: false
-  forceUpgrade: false
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: metrics-server

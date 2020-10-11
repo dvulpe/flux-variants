@@ -4,3 +4,4 @@ resources:
   - ../../../modules/cluster
 patchesStrategicMerge:
   - cluster-autoscaler-patch.yaml
+  - podinfo.yaml

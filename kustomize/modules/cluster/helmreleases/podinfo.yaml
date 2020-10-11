@@ -1,0 +1,15 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  releaseName: nginx-ingress
+  targetNamespace: default
+  timeout: 300
+  chart:
+    repository: https://stefanprodan.github.io/podinfo
+    name: podinfo
+    version: 5.0.2
+  values:
+    replicaCount: 3

@@ -4,3 +4,4 @@ resources:
   - helmreleases/cluster-autoscaler.yaml
   - helmreleases/metrics-server.yaml
   - helmreleases/nginx-ingress.yaml
+  - helmreleases/podinfo.yaml
