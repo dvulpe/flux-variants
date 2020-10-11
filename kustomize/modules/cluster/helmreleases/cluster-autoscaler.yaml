@@ -1,0 +1,45 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: cluster-autoscaler
+  namespace: kube-system
+spec:
+  releaseName: cluster-autoscaler
+  targetNamespace: kube-system
+  timeout: 300
+  resetValues: false
+  wait: true
+  forceUpgrade: false
+  chart:
+    repository: https://kubernetes.github.io/autoscaler
+    name: cluster-autoscaler
+    version: 1.0.5
+  values:
+    podAnnotations:
+      "prometheus.io/scrape": "true"
+      "prometheus.io/port": "8085"
+      "cluster-autoscaler.kubernetes.io/safe-to-evict": "false"
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "300Mi"
+      limits:
+        cpu: "1000m"
+        memory: "512Mi"
+    image:
+      repository: "k8s.gcr.io/autoscaling/cluster-autoscaler"
+      tag: "v1.17.3"
+    priorityClassName: "system-cluster-critical"
+    awsRegion: "eu-west-1"
+    fullnameOverride: "cluster-autoscaler"
+    autoDiscovery:
+      clusterName: eks-demo-
+    extraArgs:
+      "scale-down-utilization-threshold": "0.8"
+      "scale-down-unneeded-time": "2m"
+      "skip-nodes-with-local-storage": "false"
+      "skip-nodes-with-system-pods": "false"
+    rbac:
+      pspEnabled: true
+    serviceAccountAnnotations:
+      "eks.amazonaws.com/role-arn": arn:aws:iam::062360539084:role/eks-demo-blue-cluster-autoscaler

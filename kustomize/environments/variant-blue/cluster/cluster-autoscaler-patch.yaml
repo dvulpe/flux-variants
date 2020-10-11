@@ -1,0 +1,21 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: cluster-autoscaler
+  namespace: kube-system
+spec:
+  releaseName: cluster-autoscaler
+  targetNamespace: kube-system
+  timeout: 300
+  resetValues: false
+  wait: true
+  forceUpgrade: false
+  chart:
+    repository: https://kubernetes.github.io/autoscaler
+    name: cluster-autoscaler
+    version: 1.0.5
+  values:
+    autoDiscovery:
+      clusterName: eks-demo-blue
+    serviceAccountAnnotations:
+      "eks.amazonaws.com/role-arn": arn:aws:iam::062360539084:role/eks-demo-blue-cluster-autoscaler

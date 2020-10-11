@@ -1,0 +1,11 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: cluster-autoscaler
+  namespace: kube-system
+spec:
+  values:
+    autoDiscovery:
+      clusterName: eks-demo-green
+    serviceAccountAnnotations:
+      "eks.amazonaws.com/role-arn": arn:aws:iam::062360539084:role/eks-demo-green-cluster-autoscaler
