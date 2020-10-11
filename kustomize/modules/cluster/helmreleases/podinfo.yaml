@@ -6,7 +6,6 @@ metadata:
 spec:
   releaseName: podinfo
   targetNamespace: default
-  timeout: 300
   chart:
     repository: https://stefanprodan.github.io/podinfo
     name: podinfo
