@@ -14,7 +14,7 @@ spec:
     name: ingress-nginx
     version: 3.6.0
   values:
-    nameOverride: ingress-nginx
+    fullnameOverride: ingress-nginx
     controller:
       config:
         "use-forwarded-headers": "true"
