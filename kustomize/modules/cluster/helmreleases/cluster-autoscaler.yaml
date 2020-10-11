@@ -13,7 +13,7 @@ spec:
   chart:
     repository: https://kubernetes.github.io/autoscaler
     name: cluster-autoscaler
-    version: 1.0.5
+    version: 1.0.4
   values:
     podAnnotations:
       "prometheus.io/scrape": "true"
