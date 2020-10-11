@@ -7,3 +7,4 @@ spec:
   values:
     ui:
       message: "Running on variant-green"
+      color: "#348f48"
