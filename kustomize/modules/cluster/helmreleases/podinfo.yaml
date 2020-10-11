@@ -4,7 +4,7 @@ metadata:
   name: podinfo
   namespace: default
 spec:
-  releaseName: nginx-ingress
+  releaseName: podinfo
   targetNamespace: default
   timeout: 300
   chart:
