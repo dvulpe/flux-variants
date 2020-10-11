@@ -7,5 +7,6 @@ spec:
   values:
     autoDiscovery:
       clusterName: eks-demo-green
-    serviceAccountAnnotations:
-      "eks.amazonaws.com/role-arn": arn:aws:iam::062360539084:role/eks-demo-green-cluster-autoscaler
+    rbac:
+      serviceAccountAnnotations:
+        "eks.amazonaws.com/role-arn": arn:aws:iam::062360539084:role/eks-demo-green-cluster-autoscaler
