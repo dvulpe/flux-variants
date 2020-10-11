@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - helmreleases/cluster-autoscaler.yaml
   - helmreleases/metrics-server.yaml
-  - helmreleases/nginx-ingress.yaml
+  - helmreleases/ingress-nginx.yaml
   - helmreleases/podinfo.yaml
