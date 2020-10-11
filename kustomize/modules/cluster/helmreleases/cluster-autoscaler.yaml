@@ -12,7 +12,7 @@ spec:
   chart:
     repository: https://kubernetes.github.io/autoscaler
     name: cluster-autoscaler-chart
-    version: 1.0.4
+    version: 1.0.5
   values:
     podAnnotations:
       "prometheus.io/scrape": "true"
@@ -39,4 +39,5 @@ spec:
       "skip-nodes-with-local-storage": "false"
       "skip-nodes-with-system-pods": "false"
     rbac:
+      create: true
       pspEnabled: true
