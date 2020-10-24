@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- psp.yaml
-- ../../modules/helm-operator
+- ../../modules/gke-cluster
+patchesStrategicMerge:
 - helmreleases/podinfo.yaml
-- helmreleases/ingress-nginx.yaml
