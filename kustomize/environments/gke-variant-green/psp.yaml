@@ -4,6 +4,7 @@ metadata:
   name: default-psp
 spec:
   privileged: false
+  allowPrivilegeEscalation: false
   seLinux:
     rule: RunAsAny
   supplementalGroups:
