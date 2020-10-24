@@ -1,0 +1,21 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  releaseName: podinfo
+  targetNamespace: default
+  chart:
+    repository: https://stefanprodan.github.io/podinfo
+    name: podinfo
+    version: 5.0.2
+  values:
+    replicaCount: 3
+    ingress:
+      enabled: true
+      path: /
+      annotations:
+        kubernetes.io/ingress.class: nginx
+    ui:
+      message: "Running on gke-variant-green"
