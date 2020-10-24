@@ -4,3 +4,4 @@ resources:
 - psp.yaml
 - ../../modules/helm-operator
 - helmreleases/podinfo.yaml
+- helmreleases/ingress-nginx.yaml

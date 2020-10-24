@@ -13,6 +13,7 @@ spec:
   values:
     fullnameOverride: ingress-nginx
     controller:
+      ingressClass: "nginx"
       config:
         "use-forwarded-headers": "true"
       kind: "DaemonSet"
@@ -23,11 +24,6 @@ spec:
         "node.kubernetes.io/role": "workers"
       service:
         enableHttp: "false"
-        externalTrafficPolicy: "Local"
-        type: "NodePort"
-        nodePorts:
-          https: "30443"
-          tcp:
-            "10254": "32254"
-    tcp:
-      "10254": "32254"
+        type: ClusterIP
+        annotations:
+          cloud.google.com/neg: '{"exposed_ports": {"443":{}}}'
