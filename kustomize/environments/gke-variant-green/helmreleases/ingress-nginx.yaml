@@ -12,6 +12,8 @@ spec:
     version: 3.6.0
   values:
     fullnameOverride: ingress-nginx
+    podSecurityPolicy:
+      enabled: true
     controller:
       ingressClass: "nginx"
       config:
