@@ -4,4 +4,4 @@ resources:
 - manifests/psp.yaml
 - ../../modules/helm-operator
 - helmreleases/podinfo.yaml
-- helmreleases/ingress-nginx.yaml
+- helmreleases/ingress-nginx-nodeport.yaml
